@@ -1,0 +1,33 @@
+#Get number of slices for each person in the family (user input)
+slices_member1 = int(input('How many slices for family member 1? '))
+slices_member2 = int(input('How many slices for family member 2? '))
+slices_member3 = int(input('How many slices for family member 3? '))
+slices_member4 = int(input('How many slices for family member 4? '))
+
+#Add all slices for total number for family
+slices_total4 = slices_member1 + slices_member2 + slices_member3 + slices_member4
+
+#Display the total number of slices for the family 
+print(f'Total number of slice for family of 4: {slices_total4}')
+
+#Calculate number of pizzas needed
+#Each pizza has 8 slices. Divide number by eight slices in each pizza
+#If it doesnt equal 8 then we need more pizza
+slices_whole_pizza = 8
+if slices_total4 % slices_whole_pizza ==0:
+    pizzas_needed = slices_total4 // slices_whole_pizza
+else:
+    pizzas_needed = slices_total4 // slices_whole_pizza +1 #add an extra pizza
+    
+#Display number of pizzas needed round up to nearest whole number
+print(f'Total number of pizzas needed: {pizzas_needed}')
+
+#Get whole number of slices in that amount of pizzas
+#Multiply number of pizzas needed by 8 for each pizza
+total_slices_pizza = pizzas_needed * slices_whole_pizza
+
+#Display left over slices
+#Substract total number of slice in each pizza by the total number of slices need by the family
+left_over_pizza = total_slices_pizza - slices_total4
+print(f'Total left over pizza slices: {left_over_pizza}')
+
